@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "aetherfps",
+  "version": "1.0.0",
+  "name": "Project Aether FPS",
+  "description": "A client-side mod to optimize FPS in Minecraft with Sodium",
+  "authors": ["Your Name"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.aetherfps.AetherFPSMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.20.2",
+    "fabric-api": "*",
+    "sodium": "*"
+  },
+  "mixins": [
+    "aetherfps.mixins.json"
+  ]
+}

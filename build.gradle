@@ -1,0 +1,24 @@
+plugins {
+    id 'fabric-loom' version '1.4-SNAPSHOT'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.2'
+    mappings 'net.fabricmc:yarn:1.20.2+build.1:v2'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.89.0+1.20.2'
+    modImplementation 'maven.modrinth:sodium:mc1.20.2-0.5.2'
+}
+
+loom {
+    accessWidenerPath = file('src/main/resources/aetherfps.accesswidener')
+    refreshDeps {
+        refresh(dependencies.minecraft)
+        refresh(dependencies.mappings)
+    }
+}
